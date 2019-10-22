@@ -1,0 +1,12 @@
+server:
+  port: 8191
+
+# Enable scanning of all directories that contains *service in the name.
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/kappaj2/rentalstoreconfig
+          search-paths:
+            - 'service-config/*service'
