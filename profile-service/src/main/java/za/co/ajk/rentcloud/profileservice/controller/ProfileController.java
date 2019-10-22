@@ -27,25 +27,25 @@ public class ProfileController {
         this.customerService = customerService;
     }
 
-    @RequestMapping(value = "/profile", method = RequestMethod.POST)
+    @RequestMapping(value = "/customers", method = RequestMethod.POST)
     @PreAuthorize("hasAuthority('create_profile')")
     public Customer save(@RequestBody Customer customer) {
         return customerService.save(customer);
 
     }
 
-    @RequestMapping(value = "/profile", method = RequestMethod.GET)
+    @RequestMapping(value = "/customers/{id}", method = RequestMethod.GET)
 //    @PostAuthorize
 //            ("returnObject.username == authentication.principal.nickName")
 //  Access only if returnObject (customer).username is the same as authentication.principal.nickname
-    public Customer findById(@RequestParam Integer id) {
-        return customerService.findCustomer(id);
+    public Customer findById(@PathVariable (value = "id") Integer customerId) {
+        return customerService.findCustomer(customerId);
 
     }
 
-    @RequestMapping(value = "/profiles", method = RequestMethod.GET)
-    @PreAuthorize("hasAuthority('read_profile')")
-//    @PreAuthorize("hasRole('ROLE_operator')")
+    @RequestMapping(value = "/customers", method = RequestMethod.GET)
+//    @PreAuthorize("hasAuthority('read_profile')")
+    @PreAuthorize("hasRole('ROLE_admin')")
     public List<Customer> findAllCustomers() {
 
         log.info("Inside the @Async logic: "

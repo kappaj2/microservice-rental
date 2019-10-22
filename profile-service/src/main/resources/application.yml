@@ -28,3 +28,7 @@ security:
     client:
       client-id: mobile   # same as auth server
       client-secret: pin
+
+#
+server:
+  port: 8181
