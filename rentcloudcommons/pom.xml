@@ -7,7 +7,7 @@
     <groupId>za.co.ajk.rentcloud</groupId>
     <artifactId>rentcloud-commons</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+    <name>rentcloudcommons</name>
     <properties>
         <javax.persistenc.version>2.2</javax.persistenc.version>
         <org.lombok.version>1.18.10</org.lombok.version>
