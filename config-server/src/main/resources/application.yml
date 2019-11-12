@@ -9,7 +9,10 @@ spring:
         git:
           uri: https://github.com/kappaj2/rentalstoreconfig
           search-paths:
-            - 'service-config/*service'
-          username: admin
-          password: admin
+            - 'service-config/*service'  # This will search for all ending in 'service'
+            - 'service-config/*server'
           timeout: 10
+# Call the api as follows to get a yml properties
+# http://localhost:8191/jdbc-auth-server/dev
+#                       service         / profile
+#
