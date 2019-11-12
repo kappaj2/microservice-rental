@@ -10,3 +10,6 @@ spring:
           uri: https://github.com/kappaj2/rentalstoreconfig
           search-paths:
             - 'service-config/*service'
+          username: admin
+          password: admin
+          timeout: 10
