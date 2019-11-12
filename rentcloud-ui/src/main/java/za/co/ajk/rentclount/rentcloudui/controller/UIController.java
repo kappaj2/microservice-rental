@@ -23,7 +23,6 @@ public class UIController extends WebSecurityConfigurerAdapter {
     @Autowired
     private RestTemplate restTemplate;
 
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
@@ -43,14 +42,11 @@ public class UIController extends WebSecurityConfigurerAdapter {
         return "secure";
     }
 
-
     @RequestMapping(value = "/customers")
     public String loadCustomers(Model model) {
 
         HttpHeaders httpHeaders = new HttpHeaders();
-
         httpHeaders.add("Authorization", AccessToken.getAccessToken());
-
         HttpEntity<Customer> customerHttpEntity = new HttpEntity<>(httpHeaders);
 
         try {

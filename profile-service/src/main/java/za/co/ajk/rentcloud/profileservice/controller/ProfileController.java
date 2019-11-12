@@ -1,13 +1,11 @@
 package za.co.ajk.rentcloud.profileservice.controller;
 
-import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import za.co.ajk.rentcloud.commons.model.Customer;
 import za.co.ajk.rentcloud.profileservice.services.CustomerService;
@@ -38,7 +36,7 @@ public class ProfileController {
 //    @PostAuthorize
 //            ("returnObject.username == authentication.principal.nickName")
 //  Access only if returnObject (customer).username is the same as authentication.principal.nickname
-    public Customer findById(@PathVariable (value = "id") Integer customerId) {
+    public Customer findById(@PathVariable(value = "id") Integer customerId) {
         return customerService.findCustomer(customerId);
 
     }
