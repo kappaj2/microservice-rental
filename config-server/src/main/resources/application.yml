@@ -1,5 +1,7 @@
 server:
   port: 8191
+application:
+  name: config-server
 
 # Enable scanning of all directories that contains *service in the name.
 spring:
@@ -15,4 +17,7 @@ spring:
 # Call the api as follows to get a yml properties
 # http://localhost:8191/jdbc-auth-server/dev
 #                       service         / profile
-#
+# Get the exact property file data
+# http://localhost:8191/jdbc-auth-server-dev.yml
+# http://localhost:8191/jdbc-auth-server-dev.properties
+# http://localhost:8191/jdbc-auth-server-dev.json
