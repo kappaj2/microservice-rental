@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>za.co.ajk.rentcloud</groupId>
-	<artifactId>authorization-server</artifactId>
+	<artifactId>jdbc-auth-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>jdbc-auth-server</name>
 	<description>Demo project for Spring Boot</description>
