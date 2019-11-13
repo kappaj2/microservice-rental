@@ -43,7 +43,8 @@ public class ProfileController {
 
     @RequestMapping(value = "/customers", method = RequestMethod.GET)
 //    @PreAuthorize("hasAuthority('read_profile')")
-    @PreAuthorize("hasRole('ROLE_admin')")
+//    @PreAuthorize("hasRole('ROLE_admin')")
+    @PreAuthorize("#oauth2.hasScope('fooScope') and hasRole('ROLE_admin')")
     public List<Customer> findAllCustomers() {
 
         log.info("Inside the @Async logic: "

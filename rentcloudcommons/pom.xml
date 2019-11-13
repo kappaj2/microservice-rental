@@ -12,6 +12,7 @@
         <javax.persistenc.version>2.2</javax.persistenc.version>
         <org.lombok.version>1.18.10</org.lombok.version>
         <mysql.connector.version>5.1.48</mysql.connector.version>
+        <java.version>1.8</java.version>
     </properties>
 
     <dependencies>
