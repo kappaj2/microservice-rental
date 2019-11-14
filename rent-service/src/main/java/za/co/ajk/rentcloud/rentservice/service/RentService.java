@@ -1,18 +1,11 @@
-package lk.codelabs.rentcloud.rentservice.service;
+package za.co.ajk.rentcloud.rentservice.service;
 
-import lk.codelabs.rentcloud.model.rent.Rent;
-import lk.codelabs.rentcloud.rentservice.model.DetailResponse;
+
+import za.co.ajk.rentcloud.model.rent.Rent;
+import za.co.ajk.rentcloud.rentservice.model.DetailResponse;
 
 import java.util.List;
 
-/**
- * @author Krishantha Dinesh
- * krishantha@krishantha.com
- * www.krishantha.com
- * twitter @krishantha
- * on 15-October-2019 06:34
- * @Project rentcloudmodel
- */
 public interface RentService {
     Rent save(Rent customer);
 

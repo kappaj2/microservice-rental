@@ -1,15 +1,9 @@
-package lk.codelabs.rentcloud.rentservice.model;
+package za.co.ajk.rentcloud.rentservice.model;
 
-import lk.codelabs.rentcloud.model.rent.Rent;
 
-/**
- * @author Krishantha Dinesh
- * krishantha@krishantha.com
- * www.krishantha.com
- * twitter @krishantha
- * on 22-October-2019 23:25
- * @Project rent-service
- */
+import za.co.ajk.rentcloud.model.rent.Rent;
+import za.co.ajk.rentcloud.rentservice.model.Response;
+
 public class SimpleResponse implements Response {
 
     Rent rent;

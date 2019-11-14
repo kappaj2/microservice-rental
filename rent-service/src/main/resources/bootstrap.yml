@@ -1,12 +1,6 @@
-## Required for config server configuration.
-#spring:
-#  cloud:
-#    config:
-#      uri: http://localhost:8191
-
 spring:
   application:
-    name: customer
+    name: rent
 
 server:
   port: 0

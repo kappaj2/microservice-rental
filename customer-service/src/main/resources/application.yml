@@ -18,8 +18,7 @@ spring:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
       ddl-auto: update
-  application:
-    name: profile
+
 
 ## Confirm where security service is running.
 security:
@@ -31,5 +30,5 @@ security:
       client-secret: pin
 
 #
-server:
-  port: 8181
+#server:
+#  port: 8181

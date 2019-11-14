@@ -1,17 +1,10 @@
-package lk.codelabs.rentcloud.rentservice.model;
+package za.co.ajk.rentcloud.rentservice.model;
 
-import lk.codelabs.rentcloud.model.customer.Customer;
-import lk.codelabs.rentcloud.model.rent.Rent;
-import lk.codelabs.rentcloud.model.vehicle.Vehicle;
 
-/**
- * @author Krishantha Dinesh
- * krishantha@krishantha.com
- * www.krishantha.com
- * twitter @krishantha
- * on 22-October-2019 23:24
- * @Project rent-service
- */
+import za.co.ajk.rentcloud.model.customer.Customer;
+import za.co.ajk.rentcloud.model.rent.Rent;
+import za.co.ajk.rentcloud.model.vehicle.Vehicle;
+
 public class DetailResponse implements Response {
 
     Rent rent;

@@ -1,30 +1,22 @@
-package lk.codelabs.rentcloud.rentservice.service;
+package za.co.ajk.rentcloud.rentservice.service.impl;
 
-import lk.codelabs.rentcloud.model.customer.Customer;
-import lk.codelabs.rentcloud.model.rent.Rent;
-import lk.codelabs.rentcloud.model.vehicle.Vehicle;
-import lk.codelabs.rentcloud.rentservice.model.DetailResponse;
-import lk.codelabs.rentcloud.rentservice.repository.RentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import za.co.ajk.rentcloud.model.customer.Customer;
+import za.co.ajk.rentcloud.model.rent.Rent;
+import za.co.ajk.rentcloud.model.vehicle.Vehicle;
+import za.co.ajk.rentcloud.rentservice.model.DetailResponse;
+import za.co.ajk.rentcloud.rentservice.repository.RentRepository;
+import za.co.ajk.rentcloud.rentservice.service.RentService;
 
 import java.util.List;
 import java.util.Optional;
 
-/**
- * @author Krishantha Dinesh
- * krishantha@krishantha.com
- * www.krishantha.com
- * twitter @krishantha
- * on 15-October-2019 06:33
- * @Project rentcloudmodel
- */
 @Service
 public class RentServiceImpl implements RentService {
-
 
     @Autowired
     RentRepository rentRepository;

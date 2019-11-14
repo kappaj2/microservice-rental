@@ -1,21 +1,21 @@
-package lk.codelabs.rentcloud.rentservice.controller;
+package za.co.ajk.rentcloud.rentservice.controller;
 
-import lk.codelabs.rentcloud.model.rent.Rent;
-import lk.codelabs.rentcloud.rentservice.model.Response;
-import lk.codelabs.rentcloud.rentservice.model.SimpleResponse;
-import lk.codelabs.rentcloud.rentservice.service.RentService;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import za.co.ajk.rentcloud.model.rent.Rent;
+import za.co.ajk.rentcloud.rentservice.model.Response;
+import za.co.ajk.rentcloud.rentservice.model.SimpleResponse;
+import za.co.ajk.rentcloud.rentservice.service.RentService;
 
 import java.util.List;
 
-/**
- * @author Krishantha Dinesh
- * krishantha@krishantha.com
- * www.krishantha.com
- * twitter @krishantha
- * on 15-October-2019 06:36
- * @Project rentcloudmodel
- */
 @RestController
 @RequestMapping("/services/rents")
 public class RentController {

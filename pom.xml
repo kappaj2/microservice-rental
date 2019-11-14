@@ -30,6 +30,7 @@
         <module>rent-cloud-task</module>
         <module>vehicle-service</module>
         <module>rent-service</module>
+        <module>discovery-service</module>
     </modules>
 
     <build>
