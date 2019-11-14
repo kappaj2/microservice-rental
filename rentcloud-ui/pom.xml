@@ -40,7 +40,7 @@
         <!--	micro services project dependencies	-->
         <dependency>
             <groupId>za.co.ajk.rentcloud</groupId>
-            <artifactId>rentcloud-commons</artifactId>
+            <artifactId>rentcloud-model</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 

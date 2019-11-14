@@ -13,7 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
-import za.co.ajk.rentcloud.commons.model.Customer;
+import za.co.ajk.rentcloud.model.customer.Customer;
 import za.co.ajk.rentclount.rentcloudui.config.AccessToken;
 
 @Controller
