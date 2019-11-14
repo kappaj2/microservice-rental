@@ -9,10 +9,13 @@ import org.springframework.security.oauth2.config.annotation.configurers.ClientD
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
+import org.springframework.security.oauth2.provider.token.TokenEnhancer;
+import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 
 import javax.sql.DataSource;
+import java.util.Arrays;
 
 @Configuration
 public class AuthorizationServerConfiguration implements AuthorizationServerConfigurer {
@@ -43,7 +46,15 @@ public class AuthorizationServerConfiguration implements AuthorizationServerConf
 
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoint) throws Exception {
+        final TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
+        tokenEnhancerChain.setTokenEnhancers(Arrays.asList(tokenEnhancer()));
+
         endpoint.authenticationManager(authenticationManager);
-        endpoint.tokenStore(jdbcTokenStore());
+        endpoint.tokenStore(jdbcTokenStore()).tokenEnhancer(tokenEnhancerChain);
+    }
+
+    @Bean
+    public TokenEnhancer tokenEnhancer() {
+        return new CustomTokenEnhancer();
     }
 }
