@@ -20,17 +20,20 @@ import java.util.Arrays;
 @Configuration
 public class AuthorizationServerConfiguration implements AuthorizationServerConfigurer {
 
-    @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @Autowired
     private DataSource dataSource;
 
-    @Autowired
     private AuthenticationManager authenticationManager;
 
+    public AuthorizationServerConfiguration(PasswordEncoder passwordEncoder, DataSource dataSource, AuthenticationManager authenticationManager) {
+        this.passwordEncoder = passwordEncoder;
+        this.dataSource = dataSource;
+        this.authenticationManager = authenticationManager;
+    }
+
     @Bean
-    TokenStore jdbcTokenStore(){
+    TokenStore jdbcTokenStore() {
         return new JdbcTokenStore(dataSource);
     }
 
@@ -48,9 +51,9 @@ public class AuthorizationServerConfiguration implements AuthorizationServerConf
     public void configure(AuthorizationServerEndpointsConfigurer endpoint) throws Exception {
         final TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
         tokenEnhancerChain.setTokenEnhancers(Arrays.asList(tokenEnhancer()));
-
         endpoint.authenticationManager(authenticationManager);
-        endpoint.tokenStore(jdbcTokenStore()).tokenEnhancer(tokenEnhancerChain);
+        endpoint.tokenStore(jdbcTokenStore());
+        endpoint.tokenEnhancer(tokenEnhancerChain);
     }
 
     @Bean

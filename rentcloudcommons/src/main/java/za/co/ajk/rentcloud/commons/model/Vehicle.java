@@ -20,7 +20,7 @@ public class Vehicle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    
+
     private String make;
     private String model;
     private String type;

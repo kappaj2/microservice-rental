@@ -24,7 +24,7 @@ public class VehicleServiceImpl implements VehicleService {
 
     @Override
     public Vehicle findVehicle(Integer id) {
-        Optional<Vehicle> vehicleOptional =vehicleRepository.findById(id);
+        Optional<Vehicle> vehicleOptional = vehicleRepository.findById(id);
         vehicleOptional.orElseThrow(() -> new RuntimeException("Vehicle not found"));
         return vehicleOptional.get();
     }

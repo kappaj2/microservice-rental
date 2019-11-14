@@ -13,8 +13,11 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-    @Autowired
     private UserDetailsService userDetailsService;
+
+    public WebSecurityConfiguration(UserDetailsService userDetailsService) {
+        this.userDetailsService = userDetailsService;
+    }
 
     @Bean
     public AuthenticationManager authenticationManager() throws Exception {
@@ -22,13 +25,12 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder(){
+    public PasswordEncoder passwordEncoder() {
         return PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
     }
 }

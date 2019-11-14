@@ -10,11 +10,11 @@ public class MemberProfileConfiguration {
     @Autowired
     Environment environment;
 
-    public String getDefaultModel(){
+    public String getDefaultModel() {
         return environment.getProperty("vehicle.default.model");
     }
 
-    public String getMinRentalPeriod(){
+    public String getMinRentalPeriod() {
         return environment.getProperty("member.rent.min");
     }
 }

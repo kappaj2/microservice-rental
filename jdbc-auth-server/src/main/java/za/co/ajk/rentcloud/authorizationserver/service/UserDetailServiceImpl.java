@@ -30,6 +30,7 @@ public class UserDetailServiceImpl implements UserDetailsService {
 
         UserDetails userDetails = new AuthUserDetail(optionalUser.get());
 
+        //  Check for expired, etc.
         new AccountStatusUserDetailsChecker().check(userDetails);
 
         return userDetails;

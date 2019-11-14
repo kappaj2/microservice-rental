@@ -26,7 +26,6 @@ public class AuthUserDetail extends User implements UserDetails {
             role.getPermissions().forEach(permission -> {
                 grantedAuthorities.add(new SimpleGrantedAuthority(permission.getName()));
             });
-
         });
         return grantedAuthorities;
     }

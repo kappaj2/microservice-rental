@@ -11,12 +11,12 @@ public class JdbcAuthServerProfileConfiguration implements CommandLineRunner {
     @Autowired
     private Environment environment;
 
-    public String getUrl(){
+    public String getUrl() {
         return environment.getProperty("spring.datasource.url");
     }
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("URL Value : "+getUrl());
+        System.out.println("URL Value : " + getUrl());
     }
 }
