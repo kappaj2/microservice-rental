@@ -5,3 +5,10 @@ Project consists of a commons maven module, different authentication services, r
 
                         servicename/profile
 http://localhost:8191/service1/default
+
+Application ports:
+Application                     Name                Port
+customer_service:               customer            8081
+vehicle_service                 vehicle             8082
+
+dicovery_service                discovery           8761

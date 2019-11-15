@@ -13,3 +13,17 @@ server:
     session:
       cookie:
         name: KSESSION
+
+eureka:         #tells about the Eureka server details and its refresh time
+  instance:
+    leaseRenewalIntervalInSeconds: 30      # interval in seconds for heartbeat to Eurekea server
+    leaseExpirationDurationInSeconds: 90   # Time before server will remove client if not heartbeat received.
+    metadata-map:
+      zone: zone12
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+    healthcheck:
+      enabled: true
+    lease:
+      duration: 5

@@ -1,7 +1,10 @@
 package za.co.ajk.rentclount.rentcloudui.controller;
 
+
+import com.netflix.discovery.EurekaClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -16,9 +19,13 @@ import org.springframework.web.client.RestTemplate;
 import za.co.ajk.rentcloud.model.customer.Customer;
 import za.co.ajk.rentclount.rentcloudui.config.AccessToken;
 
+//@RefreshScope
 @Controller
 @EnableOAuth2Sso
 public class UIController extends WebSecurityConfigurerAdapter {
+//
+    @Autowired
+    private EurekaClient eurekaClient;
 
     @Autowired
     private RestTemplate restTemplate;
@@ -30,6 +37,7 @@ public class UIController extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .anyRequest()
                 .authenticated();
+
     }
 
     @RequestMapping(value = "/")
@@ -51,7 +59,7 @@ public class UIController extends WebSecurityConfigurerAdapter {
 
         try {
             ResponseEntity<Customer[]> responseEntity
-                    = restTemplate.exchange("http://localhost:8181/services/customers",
+                    = restTemplate.exchange("http://customer/services/customers",
                     HttpMethod.GET,
                     customerHttpEntity,
                     Customer[].class);
@@ -65,4 +73,6 @@ public class UIController extends WebSecurityConfigurerAdapter {
         }
         return "secure";
     }
+
+
 }

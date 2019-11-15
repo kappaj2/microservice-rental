@@ -9,7 +9,7 @@ spring:
     name: customer
 
 server:
-  port: 0
+  port: ${PORT:0}
 
 eureka:
   client:

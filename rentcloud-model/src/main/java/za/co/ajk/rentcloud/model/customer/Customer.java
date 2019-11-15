@@ -22,7 +22,7 @@ public class Customer {
     private String firstName;
     private String lastName;
     private String dlNumber;
-    private String zipcode;
+    private String zipCode;
     @OneToMany(mappedBy = "customer")
     private List<Loyalty> loyalties;
 
