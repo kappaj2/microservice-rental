@@ -21,10 +21,10 @@ spring:
 
 
 ## Confirm where security service is running.
-#security:
-#  oauth2:
-#    resource:
-#      token-info-uri: http://localhost:9191/oauth/check_token
-#    client:
-#      client-id: mobile   # same as auth server
-#      client-secret: pin
+security:
+  oauth2:
+    resource:
+      token-info-uri: http://localhost:8100/oauth/check_token
+    client:
+      client-id: mobile   # same as auth server
+      client-secret: pin

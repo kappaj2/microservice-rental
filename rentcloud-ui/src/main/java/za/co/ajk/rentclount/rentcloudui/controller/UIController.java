@@ -42,8 +42,15 @@ public class UIController extends WebSecurityConfigurerAdapter {
 
     @RequestMapping(value = "/")
     public String loadUI() {
+        HttpHeaders httpHeaders = new HttpHeaders();
         return "home";
     }
+
+//    @RequestMapping(value = "/login")
+//    public String loginRedirect(){
+//        HttpHeaders httpHeaders = new HttpHeaders();
+//        return "login redirect";
+//    }
 
     @RequestMapping(value = "/secure")
     public String loadSecuredUI() {

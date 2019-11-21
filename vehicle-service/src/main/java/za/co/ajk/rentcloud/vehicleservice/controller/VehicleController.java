@@ -28,12 +28,13 @@ public class VehicleController {
 
     @GetMapping(value = "/{id}")
     public Vehicle getVehicle(@PathVariable int id) {
-        System.out.println("request came on " + LocalDateTime.now() + "  ++++++++++++++++++++++");
+        System.out.println("getVehicle : request came on " + LocalDateTime.now() + "  ++++++++++++++++++++++");
         return vehicleService.findById(id);
     }
 
     @GetMapping
     public List<Vehicle> getAllVehicles() {
+        System.out.println("getAllVehicles : request came on " + LocalDateTime.now() + "  ++++++++++++++++++++++");
         return vehicleService.findAll();
     }
 
